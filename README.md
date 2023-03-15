@@ -1,0 +1,1 @@
+Use `sh ./run.sh` to run all experiments. Results will be dumped in `comb*.log`. The experiments include trial 0 to 9. Trial 10 to 19 are used for validation. The best hyperparameters seached on validation set are hard-coded in `comb*_experiment.py`. Only datasets with $n=150, 750, 7500$ are included due to storage limitation of Google drive.

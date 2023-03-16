@@ -34,6 +34,30 @@ def makeCombos (N):
             comboInvMap[j].append(len(combos) - 1)
     return combos, comboInvMap
 
+def makeCombos3 (N):
+    combos = []
+    comboInvMap = {}
+
+    for i in range(N):
+        comboInvMap[i] = []
+        combos.append((i,))
+        comboInvMap[i].append(len(combos) - 1)
+
+    for i in range(N-1):
+        for j in range(i + 1, N):
+            combos.append((i,j))
+            comboInvMap[i].append(len(combos) - 1)
+            comboInvMap[j].append(len(combos) - 1)
+
+    for i in range(N-2):
+        for j in range(i + 1, N-1):
+            for k in range(j + 1, N):
+                combos.append((i,j,k))
+                comboInvMap[i].append(len(combos) - 1)
+                comboInvMap[j].append(len(combos) - 1)
+                comboInvMap[k].append(len(combos) - 1)
+    return combos, comboInvMap
+
 # def AC (S, x, y, clusterCombos, thresh, useHeuristic = False):
 #     print("AC---------")
 #     N = len(x)
